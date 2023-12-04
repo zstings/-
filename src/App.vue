@@ -32,22 +32,22 @@
       if (isOriginalPath) {
         const isSymlink = await invoke("is_symlink", { path: originalPath });
         if (isSymlink) {
-          await new Command('powershell', ['-Command', `rm -r -Force ${originalPath}`]).execute();
+          await new Command('powershell', ['-Command', `rm -r -Force '${originalPath}'`]).execute();
         } else {
           if (await checkFileExists(targetPath)) {
-            await new Command('powershell', ['-Command', `rm -r -Force ${targetPath}`]).execute();
+            await new Command('powershell', ['-Command', `rm -r -Force '${targetPath}'`]).execute();
           }
-          const move = await new Command('powershell', ['-Command', `Move-Item -Path ${originalPath} -Destination ${tp2}`]).execute();
+          const move = await new Command('powershell', ['-Command', `Move-Item -Path '${originalPath}' -Destination '${tp2}'`]).execute();
           console.log(move.code == 0)
         }
       }
-      await new Command('powershell', ['-Command', `New-Item -ItemType SymbolicLink -Path ${originalPath} -Target ${targetPath}`]).execute();
+      await new Command('powershell', ['-Command', `New-Item -ItemType SymbolicLink -Path '${originalPath}' -Target '${targetPath}'`]).execute();
       Message.success('迁移成功')
       form.loading = false
       form.originalPath = ''
       form.targetPath = ''
     } catch(err) {
-      console.log(err, `New-Item -ItemType SymbolicLink -Path ${originalPath} -Target ${targetPath}`)
+      console.log(err)
       Message.error(err)
       form.loading = false
     }
