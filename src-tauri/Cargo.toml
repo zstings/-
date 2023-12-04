@@ -1,10 +1,10 @@
 [package]
-name = "kan"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
+name = "偷天换日"
+version = "1.0.0"
+description = "偷天换日"
+authors = ["ztings"]
+license = "ztings"
+repository = "https://github.com/zstings/toutianhuanri"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

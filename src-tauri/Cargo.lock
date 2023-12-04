@@ -1394,16 +1394,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "kan"
-version = "0.0.0"
-dependencies = [
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
-]
-
-[[package]]
 name = "kuchiki"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3823,4 +3813,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f4686009f71ff3e5c4dbcf1a282d0a44db3f021ba69350cd42086b3e5f1c6985"
 dependencies = [
  "libc",
+]
+
+[[package]]
+name = "偷天换日"
+version = "1.0.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
 ]
